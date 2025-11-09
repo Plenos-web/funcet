@@ -1,0 +1,60 @@
+<!-- AndroidManifest.xml -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.reminderapp">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Waktunya Claim!"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".MainActivity$AlarmReceiver" android:exported="true" />
+
+    </application>
+</manifest>
+
+<!-- res/layout/activity_main.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alarm aktif setiap 3 jam\nWaktunya claim!"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP"
+        android:layout_marginTop="24dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btn_change_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GANTI SUARA"
+        android:layout_marginTop="16dp"
+        android:padding="16dp" />
+</LinearLayout>
